@@ -22,5 +22,8 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Link> links;
 
+    public void setId(int id2) {
+    }
+
     
 }
