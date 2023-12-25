@@ -2,14 +2,18 @@ package com.example.demo.api.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "links")
+public class Link {
     private Integer id;
-    private String name;
-    private String icon;
+    private String url;
 
-    @OneToOne(mappedBy = "category")
+    @OneToOne
+    @JoinColumn(name = "application_id")
     private Application application;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Integer getId() {
         return id;
@@ -19,20 +23,12 @@ public class Category {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUrl() {
+        return url;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public Application getApplication() {
@@ -43,8 +39,13 @@ public class Category {
         this.application = application;
     }
 
-    
+    public User getUser() {
+        return user;
+    }
 
-    
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     
 }
