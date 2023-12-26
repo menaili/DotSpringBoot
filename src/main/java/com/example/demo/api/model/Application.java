@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "applications")
 public class Application {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    
     private Integer id;
     private String name;
     private String icon;

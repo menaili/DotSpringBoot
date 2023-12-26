@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "links")
 public class Link {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    
     private Integer id;
     private String url;
 

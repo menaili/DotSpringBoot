@@ -2,7 +2,6 @@ package com.example.demo.api.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.demo.Repository.UserRepository;
 import com.example.demo.api.model.User;
@@ -14,7 +13,6 @@ public class UserController {
     
     private final UserRepository userRepository;
 
-    @Autowired
     public UserController(UserRepository userRepository){
         this.userRepository = userRepository;
     }
