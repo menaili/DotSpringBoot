@@ -23,10 +23,13 @@ public class ErrorMessage {
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
-    public ErrorMessage(String message, String uri, Date timestamp) {
+    public ErrorMessage() {
+        this.timestamp = timestamp;
+    }
+    public ErrorMessage(String message, String uri) {
+        this();
         this.message = message;
         this.uri = uri;
-        this.timestamp = timestamp;
     }
 
     
